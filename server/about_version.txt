@@ -1,0 +1,22 @@
+let suppose 
+there is version written like this:
+
+4.18.4
+
+So here there are three parts of the version.
+1st -> 4
+2nd -> 18
+3rd -> 4
+
+When 
+  - 1st number is changed, it means that it is major update.(Major release/Breaking update)
+  - 2nd number is changed, it means it is a recommended update (recommended bug fix, security fix)
+  - 3rd number is changed, it means it is a minor update( minor fix)
+
+Sometimes we see (^) this symbol in the version:
+for example - ^4.19.4
+it means whenever we update the version then it will automatically choose the compatible recommended and minor updates but not change the major update number.
+only change (2nd and 3rd number not 1st number)
+
+And also we see (~) this symbol:
+So it means when we update the package it will be automatically choose the compatible minor update only(only change 3rd number.)
