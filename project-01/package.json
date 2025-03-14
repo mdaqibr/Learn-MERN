@@ -1,0 +1,16 @@
+{
+  "name": "project-01",
+  "version": "1.0.0",
+  "description": "In this project we will be learn about the REST API using Node and Express JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
