@@ -65,4 +65,31 @@ app.post("/api/users", async(req, res) => {
   }
 });
 
+// Get User Data by Email
+app.get("/api/users", async (req, res) => {
+  try {
+    const userEmail = req.query.email;
+    console.log(req.query);
+
+    // Find user by email
+    const user = await User.findOne({ email: userEmail });
+
+    if (!user) {
+      return res.status(404).json({ msg: "User not found." });
+    }
+
+    return res.status(200).json(user);
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    return res.status(500).json({ msg: "Internal server error." });
+  }
+});
+
+/*
+  When to use req.query, req.params, req.body?
+  1. url like "/api/users" then use req.body for example when creating the new entry then data came in body.
+  2. when url "/api/users/:id" then use req.params [api/user/md.aqib@unthinkable.co].
+  3. when url "/users?email=xyz" then use req.query because it is query url.
+*/
+
 app.listen(PORT, () => console.log(`Server started on ${PORT} port.`));
