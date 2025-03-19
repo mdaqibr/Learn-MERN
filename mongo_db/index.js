@@ -37,8 +37,9 @@ const userSchema = new mongoose.Schema({
   },
   jobTitle: {
     type: String,
-  },
-});
+  }
+}, { timestamps: true }
+);
 
 // Define DB table
 const User = mongoose.model("user", userSchema);
